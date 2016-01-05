@@ -101,14 +101,14 @@
         {{#with getUser this}}
             <div class="user-left"><img src="/{{avatar}}" class="avatar_img_sm"> <br>
                 {{username}}</div>
-        {{/with}} <p class="speech left">{{text}}</p>
+        {{/with}} <p class="speech left comment">{{{parseEmoticons text}}}</p>
 
         <div class="clearfix"></div>
     {{else}}
         {{#with getUser this}}
             <div class="user-right"><img src="/{{avatar}}" class="avatar_img_sm"> <br>
                 {{username}}</div>
-        {{/with}} <p class="speech right">{{text}}</p>
+        {{/with}} <p class="speech right comment">{{{parseEmoticons text}}}</p>
 
         <div class="clearfix"></div>
     {{/if}}

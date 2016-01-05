@@ -98,9 +98,13 @@ if (Meteor.isClient) {
 
         other_user: function () {
             return ""
-        },
+        }
 
     });
+
+
+
+    // Events
     Template.chat_page.events({
         // this event fires when the user sends a message on the chat page
         'submit .js-send-chat': function (event) {
@@ -124,6 +128,7 @@ if (Meteor.isClient) {
                 chat.messages = msgs;
                 // update the chat object in the database.
                 Meteor.call('addMessage', chat._id, chat);
+
             }
         }
     })
