@@ -133,6 +133,7 @@ html, body {
 
 .container {
     height: 100%;
+    padding-top: 55px;
 }
 
 .box {
