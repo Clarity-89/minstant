@@ -2,6 +2,11 @@ Chats = new Mongo.Collection("chats");
 
 if (Meteor.isClient) {
 
+    // Add username field to sign up form
+    Accounts.ui.config({
+        passwordSignupFields: 'USERNAME_AND_EMAIL'
+    });
+
     Meteor.subscribe('users');
     //Meteor.subscribe('chats');
 
@@ -103,7 +108,6 @@ if (Meteor.isClient) {
     });
 
 
-
     // Events
     Template.chat_page.events({
         // this event fires when the user sends a message on the chat page
@@ -156,6 +160,15 @@ if (Meteor.isServer) {
         }
     });
 
+    Accounts.onCreateUser(function (options, user) {
+        // Use provided profile in options, or create an empty object
+        user.profile = options.profile || {};
+        // Assigns first and last names to the newly created user object
+        user.profile.username = options.username;
+        user.profile.avatar = 'ava1.png';
+        // Returns the user object
+        return user;
+    });
     Meteor.publish("users", function () {
         return Meteor.users.find();
     });
