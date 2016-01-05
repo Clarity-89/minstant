@@ -1,0 +1,149 @@
+html, body {
+    height: 100%;
+    overflow: auto;
+}
+
+.user_avatar {
+    min-height: 100px;
+    text-align: center;
+
+}
+
+.avatar_img {
+    height: 75px;
+}
+
+.avatar_img_sm {
+    height: 60px;
+    width: 60px;
+}
+
+.speech {
+    position: relative;
+    padding: 15px;
+    margin: 1em 0 3em;
+    border: 5px solid #646464;
+    color: #333;
+    background: #fff;
+    /* css3 */
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    max-width: 300px;
+}
+
+.speech:before {
+    content: "";
+    position: absolute;
+    bottom: -20px; /* value = - border-top-width - border-bottom-width */
+    left: 40px; /* controls horizontal position */
+    border-width: 20px 20px 0;
+    border-style: solid;
+    border-color: #646464 transparent;
+    /* reduce the damage in FF3.0 */
+    display: block;
+    width: 0;
+}
+
+/* creates the smaller  triangle */
+.speech:after {
+    content: "";
+    position: absolute;
+    bottom: -13px; /* value = - border-top-width - border-bottom-width */
+    left: 47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+    border-width: 13px 13px 0;
+    border-style: solid;
+    border-color: #fff transparent;
+    /* reduce the damage in FF3.0 */
+    display: block;
+    width: 0;
+}
+
+.speech.left {
+    margin-left: 30px;
+    float: left;
+}
+
+.speech.right {
+    margin-right: 30px;
+    float: right;
+}
+
+.speech.left:before {
+    top: 10px; /* controls vertical position */
+    bottom: auto;
+    left: -30px; /* value = - border-left-width - border-right-width */
+    border-width: 15px 30px 15px 0;
+    border-color: transparent #646464;
+}
+
+/* creates the smaller  triangle */
+.speech.left:after {
+    top: 16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+    bottom: auto;
+    left: -21px; /* value = - border-left-width - border-right-width */
+    border-width: 9px 21px 9px 0;
+    border-color: transparent #fff;
+}
+
+.speech.right:before {
+    top: 10px; /* controls vertical position */
+    bottom: auto;
+    left: auto;
+    right: -30px; /* value = - border-left-width - border-right-width */
+    border-width: 15px 0 15px 30px;
+    border-color: transparent #646464;
+}
+
+/* creates the smaller  triangle */
+.speech.right:after {
+    top: 16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+    bottom: auto;
+    left: auto;
+    right: -21px; /* value = - border-left-width - border-right-width */
+    border-width: 9px 0 9px 21px;
+    border-color: transparent #fff;
+}
+
+/*.user, .speech {
+    display: inline;
+}*/
+
+.user-left {
+    display: inline-block;
+    float: left;
+}
+
+.user-right {
+    display: inline-block;
+    float: right;
+}
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix {
+    display: block;
+}
+
+.container {
+    height: 100%;
+}
+
+.box {
+    height: 70%;
+    overflow: auto;
+}
+
+form {
+    margin: 30px;
+}
+
+textarea {
+    width: 60%;
+}
